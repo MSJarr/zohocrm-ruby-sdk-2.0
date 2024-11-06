@@ -227,7 +227,7 @@ module ZOHOCRMSDK
 
         bytes = file_name.force_encoding('utf-8').bytes
 
-        str = Base64.encode64(bytes.pack('"C*"'))
+        str = Base64.encode64(bytes.pack('C*'))
 
         str = str.chomp
 

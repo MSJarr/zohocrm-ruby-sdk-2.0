@@ -50,7 +50,7 @@ module ZOHOCRMSDK
       def self.error(message, exception = nil)
         unless exception.nil?
           exception.to_s
-          message = message + exception.to_s + exception.backtrace.join("\n")
+          message = message + exception.to_s
         end
         @@logger&.error(Time.new.to_s + ' ' + message)
       end
@@ -61,7 +61,7 @@ module ZOHOCRMSDK
 
       def self.severe(message, exception = nil)
       
-        message = message + exception.to_s + exception.backtrace.join("\n") unless exception.nil?
+        message = message + exception.to_s unless exception.nil?
         @@logger&.fatal(Time.new.to_s + ' ' + message)
       end
     end
